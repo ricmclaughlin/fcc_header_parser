@@ -1,12 +1,12 @@
 var express = require('express');
-var routes = function (timeStamp) {
-  var timeStampRouter = express.Router();
-  var timeStampController = require('../controllers/timeStampController')(timeStamp)
+var routes = function (reqHeader) {
+  var reqHeaderRouter = express.Router();
+  var reqHeaderController = require('../controllers/reqHeaderController')(reqHeader);
 
-  timeStampRouter.route('/:date')
-    .get(timeStampController.get);
-    
-  return timeStampRouter;
+  reqHeaderRouter.route('/:date')
+    .get(reqHeaderController.get);
+
+  return reqHeaderRouter;
 };
 
 module.exports = routes;
