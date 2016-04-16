@@ -15,9 +15,9 @@ var reqHeader = {
   'language': null,
   'software': null
 };
-var timeStampRouter = require('./routes/timeStampRoute')(reqHeader);
+var reqHeaderRouter = require('./routes/reqHeaderRouter')(reqHeader);
 app.use(express.static(__dirname + '/public'));
-app.use('/', timeStampRouter);
+app.use('/', reqHeaderRouter);
 
 app.listen(PORT, function () {
   console.log('Running on PORT: ' + PORT);

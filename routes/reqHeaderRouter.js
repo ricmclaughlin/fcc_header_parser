@@ -3,7 +3,7 @@ var routes = function (reqHeader) {
   var reqHeaderRouter = express.Router();
   var reqHeaderController = require('../controllers/reqHeaderController')(reqHeader);
 
-  reqHeaderRouter.route('/:date')
+  reqHeaderRouter.route('/api')
     .get(reqHeaderController.get);
 
   return reqHeaderRouter;
